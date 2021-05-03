@@ -1,1 +1,77 @@
-$neon: rgb(95, 248, 184);
+:root{
+    --clr-neon:hsl(330 100% 55%);
+    --clr-bg:hsl(330 14% 23%);
+};
+
+h1{
+    user-select: none;
+}
+
+.drum-pad{
+    font-size: 2em;
+    display: inline-block;
+    cursor: pointer;
+    color:var(--clr-neon);
+    border:(var(--clr-neon) 0.150em solid);
+    padding: 0.25em 1em;
+    border-radius:0.25em;
+
+    text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.4), 0 0 0.45em currentColor;
+
+    box-shadow: inset 0 0 1em 0 var(--clr-neon), 0 0 1em 0 var(--clr-neon);
+
+    position:relative;
+}
+
+.drum-pad::before{
+    content:'';
+    pointer-events: none;
+    position:absolute;
+    background: var(--clr-neon);
+
+    top:120%;
+    left:0%;
+    width:100%;
+    height:100%;
+
+    transform: perspective(1.3em) rotateX(40deg) scale(1, 0.35);
+    filter:blur(2em);
+    opacity:0.6;
+}
+
+.drum-pad::after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity:0;
+    transition: opacity 75ms linear;
+}
+
+.drum-pad:hover,
+.drum-pad:focus{
+    background: var(--clr-neon);
+    color:var(--clr-bg);
+    text-shadow:none;
+}
+
+.drum-pad:hover::before,
+.drum-pad:focus::before{
+    opacity:1;
+};
+
+.drum-pad:active::before{
+    transform: perspective(0.5em) rotateX(40deg) scale(1, 0.35);
+}
+
+.drum-pad:hover::after,
+.drum-pad:focus::after{
+    opacity:1;
+};
+
+.drum-pad:active::after{
+    box-shadow: 0 0 4em 0.5em var(--clr-neon);
+}

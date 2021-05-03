@@ -1,1 +1,45 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+:root {
+  --clr-neon:hsl(330 100% 55%);
+  --clr-bg:hsl(330 14% 23%);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#drum-machine {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--clr-bg);
+}
+
+#display {
+  font-size: 7em;
+  width: 100%;
+  color: var(--clr-neon);
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  padding-top: 5vh;
+  text-shadow: 0 0 0.2em var(--clr-neon);
+}
+
+#drum-pads {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-top: 25vh;
+}
+/*# sourceMappingURL=App.css.map */

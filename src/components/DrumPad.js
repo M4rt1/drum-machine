@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/DrumPad.css';
+//import $ from 'jquery';
 
 export default class DrumPad extends React.Component{
     constructor (props){
@@ -14,6 +15,9 @@ export default class DrumPad extends React.Component{
         this.audio.play();
         this.audio.currentTime=0;
         this.props.handleDisplay(this.props.id);
+        
+        // DOES NOT WORK
+        //document.getElementById(this.props.id).focus();
     }
 
     componentDidMount(){
@@ -26,7 +30,7 @@ export default class DrumPad extends React.Component{
     }
 
     handleKeyDown=e=>{
-        if(e.keyCode==this.props.letter.charCodeAt()){
+        if(e.keyCode===this.props.letter.charCodeAt()){
             this.audio.play()
             this.audio.currentTime=0
             this.props.handleDisplay(this.props.id)

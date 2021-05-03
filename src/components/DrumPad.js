@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/DrumPad.css';
 
 export default class DrumPad extends React.Component{
     constructor (props){
